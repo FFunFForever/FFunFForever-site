@@ -1,2 +1,0 @@
-const y=document.getElementById('year');if(y) y.textContent=new Date().getFullYear();
-const toggle=document.getElementById('themeToggle');toggle?.addEventListener('click',()=>{document.body.classList.toggle('theme-light');document.body.classList.toggle('theme-dark');});

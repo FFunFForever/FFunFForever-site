@@ -1,1 +1,0 @@
-:root{--red:#E10600;--black:#111111;--white:#FFFFFF;--beige:#F5F0E6;--grey:#777;--ff-head:'Bebas Neue',sans-serif;--ff-body:'Inter',sans-serif}body{font-family:var(--ff-body);margin:0;background:var(--beige);color:var(--black)}h1,h2,h3{font-family:var(--ff-head)}.btn{background:var(--red);color:#fff;padding:.6rem 1rem;border-radius:10px;text-decoration:none}

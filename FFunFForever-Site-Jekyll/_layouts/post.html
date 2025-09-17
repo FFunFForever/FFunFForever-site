@@ -1,0 +1,13 @@
+---
+layout: default
+---
+<section class="section">
+  <div class="container">
+    <a href="{{ '/' | relative_url }}" class="btn btn-ghost">← Back</a>
+    <h1 class="display" style="margin-top:18px">{{ page.title }}</h1>
+    <p class="lede">{{ page.date | date: "%-d %B %Y" }}</p>
+    <article class="post-content">
+      {{ content }}
+    </article>
+  </div>
+</section>

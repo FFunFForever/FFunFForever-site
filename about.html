@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About — FFunFForever</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="header">
+  <div class="container nav">
+    <div class="brand"><a href="index.html"><img src="assets/logo-fist.svg" alt=""></a><div class="wordmark">FFUNFFOREVER</div></div>
+    <button class="hamburger">☰</button>
+    <nav class="menu">
+      <a href="index.html">Home</a>
+      <a href="about.html" class="active" aria-current="page">About</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="shop.html">Shop</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html" class="btn primary">Contact</a>
+      <button class="theme-toggle" data-toggle-theme>🌓</button>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="container">
+  <section class="section">
+    <h1>About the brand</h1>
+    <p>We’re a creator label blending <strong>bold design</strong>, <strong>inclusive vibes</strong>, and a <strong>forever aesthetic</strong>. The red fist is our emblem—strength with a smile.</p>
+    <div class="hr"></div>
+    <h2>Principles</h2>
+    <ul>
+      <li><strong>Freedom</strong> — Make, experiment, ship.</li>
+      <li><strong>Fun</strong> — Witty, playful, human.</li>
+      <li><strong>Forever</strong> — Consistent, timeless craft.</li>
+    </ul>
+    <div class="hr"></div>
+    <h2>Brand assets</h2>
+    <p>Use the official color values and wordmark. Don’t stretch, recolor, or crowd the logo. Keep clear space equal to two “F” heights.</p>
+    <div style="display:flex;gap:18px;align-items:center;flex-wrap:wrap">
+      <img src="assets/logo-fist.svg" width="120" alt="Fist logo">
+      <img src="assets/wordmark.svg" width="380" alt="FFunFForever wordmark">
+    </div>
+  </section>
+</main>
+
+<footer class="footer"><div class="container">© <span id="year"></span> FFunFForever</div></footer>
+<script src="js/main.js"></script>
+<script>document.querySelector('#year').textContent=new Date().getFullYear()</script>
+</body>
+</html>

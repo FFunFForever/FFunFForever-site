@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Designing the Red Fist — FFunFForever</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="header">
+  <div class="container nav">
+    <div class="brand"><a href="index.html"><img src="assets/logo-fist.svg" alt=""></a><div class="wordmark">FFUNFFOREVER</div></div>
+    <button class="hamburger">☰</button>
+    <nav class="menu">
+      <a href="index.html">Home</a><a href="blog.html" class="active">Blog</a>
+      <a href="contact.html" class="btn primary">Contact</a>
+      <button class="theme-toggle" data-toggle-theme>🌓</button>
+    </nav>
+  </div>
+</header>
+
+<main id="content" class="container section">
+  <article>
+    <header>
+      <p class="kicker">Brand</p>
+      <h1>Designing the Red Fist</h1>
+      <p class="muted">Posted 17 September 2025 • 4 min read</p>
+      <img src="assets/placeholder-1.jpg" alt="Close-up of the red fist emblem on textured beige">
+    </header>
+    <p>The fist symbol channels boldness and solidarity while staying playful. We leaned into high contrast, thick black outlines, and a textured beige backdrop to evoke screen-printed posters.</p>
+    <h2>Color</h2>
+    <ul>
+      <li>Red: <span class="mono">#E10600</span></li>
+      <li>Black: <span class="mono">#111111</span></li>
+      <li>Beige: <span class="mono">#F5F0E6</span></li>
+    </ul>
+    <h2>Type</h2>
+    <p>Headlines use Bebas Neue in all caps; body copy uses Inter for clean readability.</p>
+    <blockquote class="card">Rule of thumb: if it doesn’t read in 2 seconds on a phone, it’s too complex.</blockquote>
+    <p>Download the <a href="#">media kit</a> for full logo packs and templates.</p>
+  </article>
+</main>
+
+<footer class="footer"><div class="container">© <span id="year"></span> FFunFForever</div></footer>
+<script src="js/main.js"></script>
+<script>document.querySelector('#year').textContent=new Date().getFullYear()</script>
+</body>
+</html>

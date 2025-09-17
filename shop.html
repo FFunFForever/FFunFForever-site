@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shop — FFunFForever</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="header">
+  <div class="container nav">
+    <div class="brand"><a href="index.html"><img src="assets/logo-fist.svg" alt=""></a><div class="wordmark">FFUNFFOREVER</div></div>
+    <button class="hamburger">☰</button>
+    <nav class="menu">
+      <a href="index.html">Home</a><a href="about.html">About</a><a href="gallery.html">Gallery</a>
+      <a href="shop.html" class="active" aria-current="page">Shop</a><a href="blog.html">Blog</a>
+      <a href="contact.html" class="btn primary">Contact</a>
+      <button class="theme-toggle" data-toggle-theme>🌓</button>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="container section">
+  <h1>Shop</h1>
+  <p>Official merch. Clean cuts, bold prints, premium blanks.</p>
+  <div class="cards">
+    <div class="card"><img src="assets/placeholder-3.jpg" alt=""><h3>Red Fist Tee</h3><p>Heavyweight, screen-printed.</p><strong>£28</strong><a class="btn block primary" href="#">Add to cart</a></div>
+    <div class="card"><img src="assets/placeholder-4.jpg" alt=""><h3>Wordmark Hoodie</h3><p>Oversized fit, fleece back.</p><strong>£55</strong><a class="btn block primary" href="#">Add to cart</a></div>
+    <div class="card"><img src="assets/placeholder-5.jpg" alt=""><h3>Sticker Pack</h3><p>Die-cut vinyl, matte.</p><strong>£7</strong><a class="btn block primary" href="#">Add to cart</a></div>
+  </div>
+</main>
+
+<footer class="footer"><div class="container">© <span id="year"></span> FFunFForever</div></footer>
+<script src="js/main.js"></script>
+<script>document.querySelector('#year').textContent=new Date().getFullYear()</script>
+</body>
+</html>

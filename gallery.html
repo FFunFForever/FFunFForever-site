@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gallery — FFunFForever</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="header">
+  <div class="container nav">
+    <div class="brand"><a href="index.html"><img src="assets/logo-fist.svg" alt=""></a><div class="wordmark">FFUNFFOREVER</div></div>
+    <button class="hamburger">☰</button>
+    <nav class="menu">
+      <a href="index.html">Home</a><a href="about.html">About</a>
+      <a href="gallery.html" class="active" aria-current="page">Gallery</a>
+      <a href="shop.html">Shop</a><a href="blog.html">Blog</a>
+      <a href="contact.html" class="btn primary">Contact</a>
+      <button class="theme-toggle" data-toggle-theme>🌓</button>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="container section">
+  <h1>Gallery</h1>
+  <p>Poster drops, thumbnails, and loopable GIF frames.</p>
+  <div class="grid" style="margin-top:18px">
+    <img src="assets/placeholder-1.jpg" alt="Red fist poster on beige">
+    <img src="assets/placeholder-2.jpg" alt="Wordmark on textured paper">
+    <img src="assets/placeholder-3.jpg" alt="Bold red gradient">
+    <img src="assets/placeholder-4.jpg" alt="Graphic collage with type">
+    <img src="assets/placeholder-5.jpg" alt="Distressed stencil type">
+    <img src="assets/placeholder-6.jpg" alt="Black and red layout">
+  </div>
+</main>
+
+<footer class="footer"><div class="container">© <span id="year"></span> FFunFForever</div></footer>
+<script src="js/main.js"></script>
+<script>document.querySelector('#year').textContent=new Date().getFullYear()</script>
+</body>
+</html>

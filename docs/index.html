@@ -1,1 +1,532 @@
-<!doctype html><meta charset='utf-8'><title>FFunFForever</title><link rel='icon' href='./assets/images/favicon.ico'><link rel='stylesheet' href='./assets/css/brand.css'><h1>Freedom. Fun. Forever.</h1><p><a class='btn' href='./press-kit/'>Press Kit</a></p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FFunFForever — Freedom. Fun. Forever.</title>
+  <meta name="description" content="FFunFForever — a bold creator brand blending play, creativity, and community." />
+  <meta property="og:title" content="FFunFForever" />
+  <meta property="og:description" content="Freedom. Fun. Forever." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#E10600" />
+
+  <!-- Brand Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --ff-head: "Bebas Neue", system-ui, sans-serif;
+      --ff-body: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+
+      /* Brand Colors */
+      --red: #E10600;
+      --black: #111111;
+      --white: #FFFFFF;
+      --beige: #F5F0E6;
+      --grey: #777777;
+
+      /* Theme tokens */
+      --bg: var(--beige);
+      --text: var(--black);
+      --muted: #2a2a2a;
+      --card: #ffffff;
+      --border: #e8e3d9;
+
+      /* Type scale */
+      --step--1: clamp(0.85rem, 0.84rem + 0.1vw, 0.95rem);
+      --step-0: clamp(1rem, 0.98rem + 0.2vw, 1.125rem);
+      --step-1: clamp(1.2rem, 1.1rem + 0.6vw, 1.5rem);
+      --step-2: clamp(1.6rem, 1.4rem + 1.3vw, 2.25rem);
+      --step-3: clamp(2.2rem, 2.0rem + 2.0vw, 3.25rem);
+      --step-4: clamp(3.2rem, 2.6rem + 3.6vw, 4.75rem);
+
+      --radius: 14px;
+      --shadow: 0 6px 24px rgba(0,0,0,0.08);
+      --shadow-strong: 0 14px 60px rgba(0,0,0,0.18);
+      --maxw: 1200px;
+      --grid-gap: 1.25rem;
+    }
+
+    /* Dark theme */
+    @media (prefers-color-scheme: dark) {
+      :root{
+        --bg: #0e0e0e;
+        --text: #f2f2f2;
+        --muted: #cfcfcf;
+        --card: #151515;
+        --border: #262626;
+      }
+    }
+    [data-theme="dark"]{
+      --bg: #0e0e0e;
+      --text: #f2f2f2;
+      --muted: #cfcfcf;
+      --card: #151515;
+      --border: #262626;
+    }
+
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: var(--ff-body);
+      color: var(--text);
+      background:
+        radial-gradient(1600px 600px at 20% -10%, rgba(225,6,0,0.08), transparent 60%),
+        radial-gradient(1200px 500px at 110% 10%, rgba(0,0,0,0.08), transparent 55%),
+        var(--bg);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a{ color: inherit; text-decoration: none; }
+    img{ max-width:100%; display:block; }
+
+    .wrap{ max-width: var(--maxw); margin-inline:auto; padding-inline: 1.2rem; }
+
+    /* Header */
+    header{
+      position: sticky; top:0; z-index: 50;
+      background: color-mix(in srgb, var(--bg) 92%, transparent);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between; gap:1rem;
+      min-height:64px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:.8rem; font-weight:700;
+      letter-spacing: .04em;
+    }
+    .brand .mark{ width:38px; height:38px; }
+    .brand .word{ font-family: var(--ff-head); font-size: 1.9rem; letter-spacing: .02em; }
+
+    .menu{
+      display:flex; align-items:center; gap:1rem;
+    }
+    .menu a{
+      padding:.6rem .9rem; border-radius: 10px; font-weight:600;
+      color: var(--muted);
+    }
+    .menu a[aria-current="page"]{ color: var(--text); }
+    .btn, button.btn{
+      background: var(--red); color: var(--white); border: none;
+      padding:.8rem 1.1rem; border-radius: 12px; font-weight:700; cursor:pointer;
+      box-shadow: var(--shadow);
+    }
+    .btn.outline{
+      background: transparent; color: var(--red); border: 2px solid var(--red);
+      box-shadow: none;
+    }
+
+    /* Mobile menu */
+    .hamburger{ display:none; background:transparent; border:0; }
+    @media (max-width: 900px){
+      .menu{ display:none; }
+      .hamburger{ display:block; padding:.6rem; border-radius: 10px; }
+      .drawer{
+        position: fixed; inset: 64px 0 0 0; background: var(--bg);
+        border-top: 1px solid var(--border);
+        transform: translateY(-8px); opacity:0; pointer-events:none;
+        transition: opacity .2s ease, transform .2s ease;
+      }
+      .drawer.open{ transform: translateY(0); opacity:1; pointer-events:auto; }
+      .drawer .links{ display:grid; gap:.2rem; padding: 1rem; }
+      .drawer a{ padding: .9rem 1rem; border-radius: 12px; color: var(--text); }
+      .drawer .cta{ padding: 1rem; display:grid; gap:.75rem; }
+    }
+
+    /* Hero */
+    .hero{
+      position: relative;
+      padding-block: clamp(3rem, 5vw, 6rem);
+      overflow: clip;
+    }
+    .hero-grid{
+      display:grid; gap: 2rem; align-items:center;
+      grid-template-columns: 1.1fr .9fr;
+    }
+    @media (max-width: 900px){
+      .hero-grid{ grid-template-columns: 1fr; }
+    }
+    .eyebrow{
+      display:inline-flex; align-items:center; gap:.5rem;
+      font-weight:700; color: var(--red); letter-spacing:.05em;
+      text-transform: uppercase; font-size: .9rem;
+      background: color-mix(in srgb, var(--red) 8%, transparent);
+      padding: .4rem .7rem; border-radius: 999px;
+    }
+    h1{
+      font-family: var(--ff-head);
+      font-size: var(--step-4);
+      line-height: .95; margin: .4rem 0 1rem;
+      letter-spacing: .02em;
+    }
+    .lead{
+      font-size: var(--step-1); color: var(--muted); margin: 0 0 1.2rem;
+    }
+    .hero-cta{ display:flex; gap:.8rem; flex-wrap:wrap; }
+
+    .poster{
+      position: relative; border-radius: 24px; overflow: hidden;
+      background: linear-gradient(180deg, rgba(0,0,0,.75), rgba(0,0,0,.55)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800"><rect width="1200" height="800" fill="%23E10600"/></svg>') center/cover no-repeat;
+      box-shadow: var(--shadow-strong);
+      aspect-ratio: 16/11;
+      display:grid; place-items:center; isolation:isolate;
+    }
+    .poster .fist{
+      width: clamp(160px, 24vw, 280px);
+      filter: drop-shadow(0 10px 30px rgba(0,0,0,.45));
+    }
+    .poster .tag{
+      position:absolute; bottom: 16px; right: 16px; color: #fff; font-weight:800;
+      letter-spacing:.08em; text-transform: uppercase; font-size: .95rem;
+      background: rgba(255,255,255,.08);
+      padding:.45rem .7rem; border: 1px solid rgba(255,255,255,.18); border-radius: 10px;
+    }
+
+    /* Section */
+    section{ padding-block: clamp(2.6rem, 4vw, 4rem); }
+    .section-head{
+      display:flex; align-items:end; justify-content:space-between; gap:1rem; margin-bottom: 1.4rem;
+    }
+    .section-head h2{
+      font-family: var(--ff-head); font-size: var(--step-3);
+      line-height:.95; margin:0;
+    }
+    .section-head p{ color: var(--muted); max-width: 65ch; }
+
+    /* Feature grid */
+    .grid{
+      display:grid; gap: var(--grid-gap);
+      grid-template-columns: repeat(12, 1fr);
+    }
+    .card{
+      grid-column: span 4; background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.2rem; box-shadow: var(--shadow);
+    }
+    .card h3{
+      font-family: var(--ff-head); font-size: var(--step-2); margin: .2rem 0 .6rem;
+    }
+    .card p{ color: var(--muted); }
+    .badge{
+      display:inline-flex; align-items:center; gap:.45rem; font-size:.8rem; font-weight:700;
+      color: var(--red); background: color-mix(in srgb, var(--red) 10%, transparent);
+      padding:.35rem .6rem; border-radius: 999px;
+    }
+    @media (max-width: 900px){
+      .card{ grid-column: span 12; }
+    }
+
+    /* Showcase band */
+    .band{
+      background:
+        repeating-linear-gradient(135deg, rgba(0,0,0,.035) 0 12px, transparent 12px 24px),
+        color-mix(in srgb, var(--red) 6%, var(--bg));
+      border-block: 1px solid var(--border);
+    }
+    .showcase{
+      display:grid; gap: var(--grid-gap);
+      grid-template-columns: 1fr 1fr;
+    }
+    .frame{
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 18px; padding: 1rem; box-shadow: var(--shadow);
+    }
+    .tile{
+      aspect-ratio: 16/10; border-radius: 12px; border: 1px dashed var(--border);
+      display:grid; place-items:center; color: var(--grey);
+      background:
+        radial-gradient(200px 200px at 20% 20%, rgba(225,6,0,.12), transparent 60%),
+        radial-gradient(280px 200px at 90% 20%, rgba(0,0,0,.10), transparent 60%),
+        var(--bg);
+    }
+    @media (max-width: 900px){
+      .showcase{ grid-template-columns: 1fr; }
+    }
+
+    /* Newsletter / CTA */
+    .cta{
+      background: linear-gradient(180deg, color-mix(in srgb, var(--red) 9%, var(--bg)) 0%, transparent 70%);
+      border-top: 1px solid var(--border);
+    }
+    .cta .box{
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 18px; padding: clamp(1rem, 4vw, 2rem); box-shadow: var(--shadow);
+      display:grid; gap: 1rem;
+    }
+    .field{
+      display:flex; gap:.6rem; flex-wrap:wrap;
+    }
+    .field input{
+      flex:1 1 260px; min-width: 0;
+      padding: .9rem 1rem; border-radius: 12px; border:1px solid var(--border);
+      background: transparent; color: var(--text); font: inherit;
+    }
+
+    /* Footer */
+    footer{
+      border-top: 1px solid var(--border); padding-block: 2rem;
+    }
+    .foot{
+      display:grid; gap: 1.25rem;
+      grid-template-columns: 1fr auto;
+      align-items:center;
+    }
+    .social{ display:flex; gap:.6rem; }
+    .icon-btn{
+      width:40px; height:40px; display:grid; place-items:center; border-radius: 10px;
+      border:1px solid var(--border); background: var(--card);
+    }
+
+    /* Motion safety */
+    @media (prefers-reduced-motion: reduce){
+      *{ animation: none !important; transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav" role="navigation" aria-label="Primary">
+      <a class="brand" href="/" aria-label="FFunFForever Home">
+        <!-- Inline SVG red fist mark (placeholder) -->
+        <svg class="mark" viewBox="0 0 64 64" aria-hidden="true">
+          <rect width="64" height="64" rx="12" fill="black"></rect>
+          <path d="M18 48c0-10 0-16 6-20 2-1 3-2 9-2h10c2 0 3 2 3 4v7c0 8-6 13-16 13h-9c-2 0-3-1-3-2z" fill="#E10600"/>
+          <path d="M18 30c1-4 4-7 8-8 2-1 3-1 6-1h10c2 0 3 1 3 3v2H18z" fill="#E10600"/>
+          <path d="M18 34h30v4H18z" fill="#E10600"/>
+        </svg>
+        <span class="word" style="white-space:nowrap;">FFUNFFOREVER</span>
+      </a>
+
+      <nav class="menu" aria-label="Primary links">
+        <a href="#" aria-current="page">Home</a>
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#shop">Shop</a>
+        <a href="#contact" class="btn">Contact</a>
+        <button class="btn outline" id="themeToggle" aria-label="Toggle theme">Theme</button>
+      </nav>
+
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Mobile menu">
+      <div class="links wrap">
+        <a href="#" aria-current="page">Home</a>
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#shop">Shop</a>
+      </div>
+      <div class="cta wrap">
+        <a href="#contact" class="btn">Contact</a>
+        <button class="btn outline" id="themeToggleM">Theme</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap hero-grid">
+        <div>
+          <span class="eyebrow" aria-hidden="true">Freedom • Fun • Forever</span>
+          <h1 id="hero-title">A bold creator brand where play meets power.</h1>
+          <p class="lead">Original videos, live streams, and designs with a fearless, inclusive edge.
+            Join the community and help make chaos—on purpose.</p>
+          <div class="hero-cta">
+            <a class="btn" href="#work">See the Work</a>
+            <a class="btn outline" href="#about">About the Brand</a>
+          </div>
+        </div>
+
+        <figure class="poster" aria-label="Brand poster">
+          <!-- Big fist mark -->
+          <svg class="fist" viewBox="0 0 64 64" role="img" aria-label="FFunFForever fist logo">
+            <rect width="64" height="64" rx="14" fill="black"></rect>
+            <path d="M18 48c0-10 0-16 6-20 2-1 3-2 9-2h10c2 0 3 2 3 4v7c0 8-6 13-16 13h-9c-2 0-3-1-3-2z" fill="#E10600"/>
+            <path d="M18 30c1-4 4-7 8-8 2-1 3-1 6-1h10c2 0 3 1 3 3v2H18z" fill="#E10600"/>
+            <path d="M18 34h30v4H18z" fill="#E10600"/>
+          </svg>
+          <figcaption class="tag">FFUNFFOREVER</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section aria-labelledby="features-title">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="features-title">What we do</h2>
+          <p>We make high-impact content with a poster-style aesthetic and a community-first mindset:
+            fast cuts, bold titles, and zero filler.</p>
+        </div>
+
+        <div class="grid">
+          <article class="card">
+            <span class="badge">Video</span>
+            <h3>Shorts & Streams</h3>
+            <p>High-energy edits, lo-fi interludes, and live chaos. Captions and alt-text included—always.</p>
+          </article>
+
+          <article class="card">
+            <span class="badge">Design</span>
+            <h3>Brand & Merch</h3>
+            <p>Red fist iconography, distressed type options, and print-ready layouts for drops and collabs.</p>
+          </article>
+
+          <article class="card">
+            <span class="badge">Community</span>
+            <h3>Events & Collabs</h3>
+            <p>Inclusive, playful spaces online/offline. Partner guidelines keep everything on-brand.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Showcase band -->
+    <section class="band" aria-labelledby="showcase-title">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="showcase-title">Latest drops</h2>
+          <p>Poster frames, motion stingers, stream overlays, and social carousels—built for scroll-stopping impact.</p>
+        </div>
+
+        <div class="showcase">
+          <div class="frame">
+            <div class="tile" role="img" aria-label="Mockup: Social carousel template">
+              <strong>Social Carousel Template</strong>
+            </div>
+          </div>
+          <div class="frame">
+            <div class="tile" role="img" aria-label="Mockup: YouTube/Twitch overlay kit">
+              <strong>Overlay Kit (YT/Twitch)</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter / CTA -->
+    <section class="cta" aria-labelledby="cta-title">
+      <div class="wrap">
+        <div class="box">
+          <div class="section-head" style="align-items:center;">
+            <h2 id="cta-title">Get early access & drops</h2>
+            <p>Sign up for launch alerts, collab openings, and limited-run merch.</p>
+          </div>
+          <form class="field" action="#" method="post" aria-label="Email signup">
+            <label class="sr-only" for="email">Email</label>
+            <input id="email" type="email" name="email" placeholder="you@domain.com" required aria-required="true" />
+            <button class="btn" type="submit">Subscribe</button>
+          </form>
+          <small style="color:var(--grey)">We respect your inbox. Unsubscribe anytime.</small>
+        </div>
+      </div>
+    </section>
+
+    <!-- About / Values -->
+    <section id="about" aria-labelledby="about-title">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="about-title">Freedom. Fun. Forever.</h2>
+          <p>Our north star is simple: express freely, design playfully, and build things that last. 
+            We stand for inclusivity, accessibility, and craft.</p>
+        </div>
+        <div class="grid">
+          <article class="card"><h3>Accessibility</h3><p>High contrast, captions, alt text, and motion-safe defaults.</p></article>
+          <article class="card"><h3>Inclusivity</h3><p>Community guidelines promote safety, respect, and joy.</p></article>
+          <article class="card"><h3>Craft</h3><p>Consistent color, type, and logo lockups across every platform.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" aria-labelledby="contact-title">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="contact-title">Collaborate</h2>
+          <p>Brand partnerships, creator collabs, and licensing. Send a brief and we’ll come back with concepts.</p>
+        </div>
+        <div class="grid">
+          <div class="card" style="grid-column: span 6;">
+            <h3>Start a project</h3>
+            <p>Tell us about your goals, timeline, and must-haves.</p>
+            <a class="btn" href="mailto:hello@ffunfforever.example">Email: hello@ffunfforever.example</a>
+          </div>
+          <div class="card" style="grid-column: span 6;">
+            <h3>Press & Assets</h3>
+            <p>Logo lockups, color swatches, and usage rules.</p>
+            <a class="btn outline" href="#">Download Press Kit</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="wrap foot">
+      <p style="margin:0; color:var(--grey)">© <span id="year"></span> FFunFForever. All rights reserved.</p>
+      <div class="social" aria-label="Social links">
+        <a class="icon-btn" href="#" aria-label="YouTube">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M22 12c0 3.7-.3 6-4 6H6c-3.7 0-4-2.3-4-6s.3-6 4-6h12c3.7 0 4 2.3 4 6Z" stroke="currentColor"/>
+            <path d="M10 9v6l5-3-5-3Z" fill="currentColor"/>
+          </svg>
+        </a>
+        <a class="icon-btn" href="#" aria-label="Twitch">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M4 3h16v11l-4 4h-5l-2 2H7v-2H4V3Z" stroke="currentColor"/>
+            <path d="M14 7v5M10 7v5" stroke="currentColor" stroke-width="2"/>
+          </svg>
+        </a>
+        <a class="icon-btn" href="#" aria-label="Instagram">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor"/>
+            <circle cx="12" cy="12" r="4.2" stroke="currentColor"/>
+            <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile menu
+    const ham = document.getElementById('hamburger');
+    const drawer = document.getElementById('drawer');
+    ham?.addEventListener('click', ()=>{
+      const open = drawer.classList.toggle('open');
+      ham.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+
+    // Theme toggle (persists in localStorage)
+    function toggleTheme(){
+      const cur = document.documentElement.getAttribute('data-theme');
+      const next = cur === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      try{ localStorage.setItem('ff_theme', next); }catch(e){}
+    }
+    const themeBtn = document.getElementById('themeToggle');
+    const themeBtnM = document.getElementById('themeToggleM');
+    themeBtn?.addEventListener('click', toggleTheme);
+    themeBtnM?.addEventListener('click', toggleTheme);
+    try{
+      const saved = localStorage.getItem('ff_theme');
+      if(saved) document.documentElement.setAttribute('data-theme', saved);
+    }catch(e){}
+  </script>
+
+  <!-- Hidden utility for screen readers -->
+  <style>.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}</style>
+</body>
+</html>

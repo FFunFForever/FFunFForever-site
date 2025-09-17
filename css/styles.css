@@ -1,0 +1,33 @@
+:root{--fetish-red:#E10600;--ink-black:#111111;--steel-chrome:#B7B7B7;--parchment-tan:#F5E1C8;--bruise-purple:#5B2A82;
+--bg:var(--ink-black);--fg:#F4F4F4;--muted:#BDBDBD;--accent:var(--fetish-red);}body{margin:0;background:var(--bg);color:var(--fg);
+font-family:Inter,system-ui,sans-serif;line-height:1.6}.container{width:min(1100px,92%);margin-inline:auto}.site-header{background:#000;padding:10px}.display{font-family:"Stardos Stencil",sans-serif;text-transform:uppercase}
+.blog-grid{
+  display:grid;
+  gap:20px;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+}
+.blog-post{
+  background:#0c0c0c;
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:12px;
+  padding:18px;
+}
+.blog-post h3{
+  margin-top:0;
+  font-family:"Stardos Stencil",sans-serif;
+}
+.blog-post p{ color:var(--muted) }
+
+
+/* Blog cards */
+.blog-grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.card{display:block;background:#0c0c0c;border:1px solid rgba(255,255,255,.08);border-radius:14px;
+  text-decoration:none;color:inherit;overflow:hidden;transition:transform .15s ease, border-color .15s ease}
+.card:hover{transform:translateY(-2px);border-color:rgba(255,255,255,.25)}
+.card-media{height:140px;background:
+  radial-gradient(transparent, rgba(0,0,0,.7)),
+  url("../assets/textures/leather-matte.jpg") center/cover no-repeat}
+.card-body{padding:14px}
+.card-title{margin:0 0 6px;font-family:"Stardos Stencil",system-ui,sans-serif;letter-spacing:.5px}
+.card-meta{margin:0 0 8px;color:var(--muted);font-size:.85rem}
+.card-text{margin:0;color:#ddd}

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">FFunFForever Fist Logo</title>
+  <desc id="desc">A bold red raised fist with black outline.</desc>
+  <defs>
+    <style>
+      .red{fill:#E10600}
+      .stroke{fill:#111111}
+    </style>
+  </defs>
+  <path class="stroke" d="M70 470 h372 a20 20 0 0 0 20-20 V120 a20 20 0 0 0-20-20 H70 a20 20 0 0 0-20 20 v330 a20 20 0 0 0 20 20 z"/>
+  <path class="red" d="M90 450 h332 V140 H90z"/>
+  <!-- simplified stylized fist -->
+  <path class="stroke" d="M140 210 h80 v-40 h-80zM228 210 h80 v-40 h-80zM316 210 h70 v-40 h-70z"/>
+  <path class="stroke" d="M134 230 c0 40 120 40 244 0 v40 c0 40-244 40-244 0z"/>
+  <path class="stroke" d="M190 320 c0 30 128 30 128 0 v90 h-128z"/>
+</svg>
